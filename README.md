@@ -12,3 +12,9 @@ Angular 8 CRUD en Asp.Net Web API usando Entity Framework.
 -  Validaciones de campos.
 -  CORS en Asp.Net Web API.
 -  Uso de LINQ en Web API para recuperar y mostrar información.
+
+<img src="https://github.com/luisanalinares/Pedidos-Restaurante/blob/master/PrntScrn/screenshot1.JPG" width="986" height="561" />
+<img src="https://github.com/luisanalinares/Pedidos-Restaurante/blob/master/PrntScrn/screenshot2.JPG" width="986" height="561" />
+<img src="https://github.com/luisanalinares/Pedidos-Restaurante/blob/master/PrntScrn/screenshot3.JPG" width="986" height="561" />
+<img src="https://github.com/luisanalinares/Pedidos-Restaurante/blob/master/PrntScrn/screenshot4.JPG" width="986" height="561" />
+

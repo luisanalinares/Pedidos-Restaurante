@@ -1,0 +1,44 @@
+<h5 class="display-4">Pedido de comida</h5>
+<hr>
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+    <input type="hidden" name="OrderItemID" #OrderItemID="ngModel" [(ngModel)]="formData.OrderItemID">
+    <input type="hidden" name="OrderID" #OrderID="ngModel" [(ngModel)]="formData.OrderID">
+    <input type="hidden" name="ItemName" #ItemName="ngModel" [(ngModel)]="formData.ItemName">
+    <div class="form-group">
+        <label>Producto</label>
+        <select name="ItemID" #ItemID="ngModel" [(ngModel)]="formData.ItemID" class="form-control" (change)="updatePrice($event.target)"
+        [class.is-invalid]="!isValid && formData.ItemID==0">
+            <option value="0">-Seleccionar-</option>
+            <option *ngFor="let item of itemList" value="{{item.ItemID}}">{{item.Name}}</option>
+        </select>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Precio</label>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">$</div>
+                </div>
+                <input name="Price" #Price="ngModel" [(ngModel)]="formData.Price" class="form-control" readonly>
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            <label>Cantidad</label>
+            <input name="Quantity" #Quantity="ngModel" [(ngModel)]="formData.Quantity" class="form-control" 
+            (keyup)="updateTotal()" [class.is-invalid]="!isValid && formData.Quantity==0">
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Total</label>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text">$</div>
+            </div>
+            <input name="Total" #Total="ngModel" [(ngModel)]="formData.Total" class="form-control" readonly>
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-success"><i class="fas fa-concierge-bell"></i> Generar Orden</button>
+        <button type="button" class="btn btn-outline-danger ml-1" [mat-dialog-close]><i class="fa fa-close"></i> Cerrar</button>
+    </div>
+</form>
